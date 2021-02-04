@@ -1,3 +1,106 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <div class="main">
+    <div class="titulo">
+      <ion-icon slot="start" src="/assets/chess_pieces.svg"></ion-icon>
+      <span>Torneio de Xadrez Online</span>
+    </div>
+
+    <div class="informacoes">
+      <span>Torneio organizado pelo grupo de xadrez de Mineiros.</span>
+    </div>
+    <div class="premiacao">
+      <p>
+        Data e hora: 03/03/2021 as 14:00<br />
+        Ritmo de jogo: 10+3<br />
+        Tipo de torneio: Arena <br />
+        Plataforma: <a href="http://lichess.org">Lichess.org</a><br />
+        Taxa de inscrição: R$ 10,00<br />
+        Premiação:
+      </p>
+      <ol>
+        <li>
+          R$ 100,00
+        </li>
+        <li>
+          R$ 50,00
+        </li>
+        <li>
+          R$ 25,00
+        </li>
+      </ol>
+    </div>
+
+    <div class="linha">
+      <span>Para realizar inscrição siga o seguintes passos:</span>
+      <ol>
+        <li>
+          Crie uma conta no site <a href="http://lichess.org">Lichess.org</a> caso ainda não possua.
+        </li>
+        <li>
+          Efetue sua inscrição através do preenchimento do formulário abaixo.
+        </li>
+        <li>
+          Envei um email para <i>rafaelevoinfo@gmail.com</i> contendo o comprovante de pagamento da taxa de inscrição e
+          o seu
+          username do Lichess.
+        </li>
+        <li>
+          Solicite a participação na equipe XadreMineiros através <a
+            href="https://lichess.org/team/xadrezmineiros">deste link</a>
+        </li>
+      </ol>
+    </div>
+
+
+    <div class="formulario">
+      <form [formGroup]='formulario' (submit)="inscrever()">
+        <ion-list>
+          <ion-item>
+            <ion-input placeholder="Nome" formControlName="nome" class="w-100 ml-1">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="UserName do Lichess" formControlName="username" class="w-100 ml-1">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input slot="start" placeholder="Celular" pattern="\(\d{2}\)\s*\d{5}-\d{4}"  [brmasker]="{phone: true}" inputmode="tel" type="tel" formControlName="celular" class="w-100 ml-1">             
+            </ion-input>
+            <div class="d-flex align-items-center">              
+              <ion-checkbox formControlName="whatsapp"></ion-checkbox>
+              <span class="texto-menor ml-2">Quero ser adicionado ao grupo XadrezMineiros no WhatsApp</span>
+            </div>
+            
+          </ion-item>
+          
+          <ion-item>
+            <ion-input placeholder="Cidade" formControlName="cidade" class="w-100 ml-1">
+            </ion-input>
+          </ion-item>
+          <div class="submit">
+            <ion-button slot="center" size="large" type="submit" [disabled]="formulario.invalid"
+              class="w-auto mr-1">
+              <ion-icon name="document-outline"></ion-icon>
+              <span class="button_submit">Inscrever</span>
+            </ion-button>
+          </div>
+        </ion-list>
+        
+        <div [class]="inscrito?'alert alert-success m-2 text-center':'d-none'" >
+          <strong>Inscrição realizada com sucesso!!!</strong> 
+        </div>
+        <div [class]="erro?'alert alert-danger m-2 text-center':'d-none'" >
+          <strong>Inscrição realizada com sucesso!!!</strong> 
+        </div>
+      </form>
+    </div>
+
+
+    <div class="rodape">
+      Apoio: <br />
+      Oreades
+
+    </div>
+
+  </div>
 </ion-app>
