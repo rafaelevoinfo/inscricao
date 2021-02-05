@@ -1,46 +1,95 @@
+ion-content {
+  font-family: 'Libre Baskerville', serif !important;
+  --padding-start: 5px;
+  --padding-end: 5px;
+  --padding-top: 5px;
+}
+
 .main {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5%;
-  border-radius: 20px;
-  border: solid 2px black;
-  width: 80%;
+  margin: auto;
+  z-index: 10;
+  width: 90%;
+}
+
+.titulos {
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 10;
+}
+
+.img_topo {
+  // position: absolute;
+  // left: 20px;
+  // top: 20px;
+  margin: auto;
+  max-width: 300px;
+  max-height: auto;
+  z-index: 1;
+  opacity: 0.5;
 }
 
 .titulo {
   font-size: 3rem;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
   text-align: center;
 }
 
 .subtitulo {
   font-size: 2rem;
-  width: 100%;
-  text-align: right;
+  align-self: center;
 }
 
-.linha {
-  padding: 2px;
+.informacoes_titulo {
+  padding: 0.2rem;
+  background-image: linear-gradient(to right, black, white);
+  width: 100%;
+  color: white;
+  border-radius: 5px;
 }
+
+.informacoes_titulo+p,
+.informacoes_titulo+ol {
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+.lista_premiacao {
+  list-style-type: none;
+}
+
+.dados_conta {
+  align-self: flex-end;
+}
+
+.submit {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
+
 
 .rodape {
   padding: 5px;
-  text-align: right;
   width: 100%;
+  display: flex;
+  align-items: flex-end;
 }
 
-.button_submit {
-  padding-left: 2px;
+.rodape img {
+  padding: 5px;
 }
 
-div .submit {
-  width: 100%;
-  text-align: center;
-}
 
-.texto-menor{
+.texto-menor {
   font-size: 0.7rem;
   margin-left: 5px;
+}
+
+ion-scroll {
+  white-space: nowrap;
+}
+
+ion-button {
+  --background: gray;
+  --color: white;
 }

@@ -8,12 +8,12 @@ export class InscricaoService {
 
   constructor(private firestore: AngularFirestore) { }
 
-  async inscrever(ipJogador):Promise<boolean>{
+  async inscrever(ipJogador): Promise<boolean> {
     try {
       await this.firestore.collection('jogadores').doc(ipJogador.username).set(ipJogador);
       return true;
     } catch (error) {
       return false;
-    } 
+    }
   }
 }
