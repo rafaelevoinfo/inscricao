@@ -48,7 +48,8 @@ ion-content {
 }
 
 .informacoes_titulo+p,
-.informacoes_titulo+ol {
+.informacoes_titulo+ol,
+.inscricao {
   padding-left: 1rem;
   padding-top: 1rem;
 }
@@ -59,6 +60,15 @@ ion-content {
 
 .dados_conta {
   align-self: flex-end;
+}
+
+.taxa_inscricao {
+  max-width: 250px;
+  max-height: auto;
+}
+
+.nota {
+  font-size: small;
 }
 
 .submit {
@@ -73,6 +83,8 @@ ion-content {
   width: 100%;
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
+
 }
 
 .rodape img {
@@ -83,6 +95,15 @@ ion-content {
 .texto-menor {
   font-size: 0.7rem;
   margin-left: 5px;
+}
+
+.medalha {
+  width: 67px;
+  height: auto;
+}
+
+.texto_miniatura {
+  font-size: .7rem;
 }
 
 ion-scroll {
